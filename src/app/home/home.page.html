@@ -1,0 +1,130 @@
+<ion-content padding class="login auth-page">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div>
+        <ion-img name="logo" *ngIf="logo !== null && logo !== undefined" [src]="getImagemLogo()" class="logo"
+          alt="Mundobit Informática"></ion-img>
+      </div>
+    </div>
+
+    <ion-buttons slot="end" *ngIf="false">
+      <ion-button size="small" shape="round" color="medium">
+        <ion-icon name="notifications"></ion-icon>
+        <ion-badge color="dark" slot="end">2</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <div class="auth-content">
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-sm class="">
+          <div>
+            <ion-button color="primary" expand="full" shape="round" class="buttom-main" icon-top tappable
+              (click)="gotoContabilidade()">
+              <div>
+                <ion-icon name="construct" size="large" class="zoom-botton"></ion-icon><br>
+                <label>Obras</label>
+              </div>
+            </ion-button>
+          </div>
+        </ion-col>
+        <ion-col size="12" size-sm>
+          <div>
+            <ion-button color="primary" expand="full" shape="round" class="buttom-main" icon-top tappable
+              (click)="gotoTipoinspecoes()">
+              <div>
+                <ion-icon name="checkbox" size="large" class="zoom-botton"></ion-icon><br>
+                <label>Tipos de Inspeções</label>
+              </div>
+            </ion-button>
+          </div>
+        </ion-col>
+        <ion-col size="12" size-sm>        
+          <div>
+            <ion-button color="primary" expand="full" shape="round" class="buttom-main" icon-top tappable
+              (click)="gotoInspecoes()">
+              <div>
+                <ion-icon name="clipboard" size="large" class="zoom-botton"></ion-icon><br>
+                <label>Inspeção</label>
+              </div>
+            </ion-button>
+          </div>
+        </ion-col>
+        <ion-col size="12" size-sm>
+          <div>
+            <ion-button color="primary" expand="full" shape="round" class="buttom-main" icon-top tappableicon-top
+              tappable (click)="gotoTarefas()">
+              <div>
+                <ion-icon name="pulse" size="large" class="zoom-botton" (click)="gotoTarefas()"></ion-icon><br>
+                <label>Tarefas</label>
+              </div>
+            </ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+
+
+
+      <ion-row>
+        <ion-col size="12" size-sm class="">
+          <div>
+            <ion-button color="primary" expand="full" shape="round" class="buttom-main" icon-top tappable
+              (click)="gotoFornecedores()">
+              <div>
+                <ion-icon name="construct" size="large" class="zoom-botton"></ion-icon><br>
+                <label>Fornecedores</label>
+              </div>
+            </ion-button>
+          </div>
+        </ion-col>
+        <ion-col size="12" size-sm>
+          <div>
+            <ion-button color="primary" expand="full" shape="round" class="buttom-main" icon-top tappable
+              (click)="gotoProdutos()">
+              <div>
+                <ion-icon name="checkbox" size="large" class="zoom-botton"></ion-icon><br>
+                <label>Produtos</label>
+              </div>
+            </ion-button>
+          </div>
+        </ion-col>
+        <ion-col size="12" size-sm>        
+          <div>
+            <ion-button color="primary" expand="full" shape="round" class="buttom-main" icon-top tappable
+              (click)="gotoTipoInspecoesMaterial()">
+              <div>
+                <ion-icon name="clipboard" size="large" class="zoom-botton"></ion-icon><br>
+                <label>Tipo Inspecão Material</label>
+              </div>
+            </ion-button>
+          </div>
+        </ion-col>
+        <ion-col size="12" size-sm>
+          <div>
+            <ion-button color="primary" expand="full" shape="round" class="buttom-main" icon-top tappableicon-top
+              tappable (click)="gotoInspecaoMaterial()">
+              <div>
+                <ion-icon name="pulse" size="large" class="zoom-botton" (click)="gotoTarefas()"></ion-icon><br>
+                <label>Inspecão Material</label>
+              </div>
+            </ion-button>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <ion-button expand="block" shape="round" color="primary" (click)="logout()">
+            <ion-icon name="log-out" class="zoom-botton"></ion-icon>
+            <label>Sair</label>
+          </ion-button>
+
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+</ion-content>

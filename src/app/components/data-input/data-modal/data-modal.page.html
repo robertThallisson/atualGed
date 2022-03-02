@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-buttons slot="start">
+    <ion-button (click)="closeAny()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-toolbar>
+    <ion-title>Selecione a data {{ temHora()? ' e hora': ''}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content (keydown)="keyDown($event)">
+  <ion-content>
+    <div class="ion-padding">
+
+      <ion-calendar [(ngModel)]="value" [(options)]="optionsMulti" [type]="type" [format]="'YYYY-MM-DD'">
+      </ion-calendar>
+
+      <ion-input *ngIf="temHora()" type="time" placeholder="HH:MM" [(ngModel)]="hora">
+
+      </ion-input>
+    </div>
+  </ion-content>
+
+</ion-content>
+
+<ion-footer (keydown)="keyDown($event)">
+  <div class="botoes-multiselecao" (click)="ok()" color="primary">
+    <ion-button  class="botoes-multiselecao" (click)="ok()">
+      OK
+    </ion-button>
+  </div>
+</ion-footer>

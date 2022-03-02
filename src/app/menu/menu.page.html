@@ -1,0 +1,65 @@
+<ion-menu contentId="my-content">
+  <ion-header>
+    <ion-toolbar color="dark" class="user-profile">
+
+      <ion-item margin-bottom>
+        <ion-avatar slot="start" class="user-avatar">
+          <ion-img [src]="getImagemPerfil()"></ion-img>
+        </ion-avatar>
+        <ion-label>
+          <ion-text color="medium">
+            <h1><strong>{{ usuario.login }}</strong></h1>
+          </ion-text>
+           <ion-menu-toggle class="mto" auto-hide="false">
+            <a class="text10" tappable>
+              <ion-text color="medium" (click)="alteraSenha()">
+                <ion-icon name="keypad"></ion-icon>
+                <strong>Alterar Senha </strong>
+              </ion-text>
+            </a>
+             <ion-text color="secondary"> | </ion-text>
+            <a class="text10" tappable>
+              <ion-text color="medium" (click)="logout()">
+                <ion-icon name="log-out"></ion-icon>
+                <strong>sair</strong>
+              </ion-text>
+            </a>
+          </ion-menu-toggle>
+        </ion-label>
+      </ion-item>
+
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="bg-profile" id="my-content">
+    <div *ngFor="let p of appPages">
+      <ion-menu-toggle auto-hide="true" *ngIf="p.url">
+          <ion-item button  [routerDirection]="'root'" [routerLink]="[p.url]">
+              <ion-icon slot="start" [name]="p.icon" [src]="p.src"></ion-icon>
+              <ion-label>
+                  {{p.title}}
+              </ion-label>
+          </ion-item>
+      </ion-menu-toggle>
+      <ion-item button *ngIf="p.children?.length > 0" (click)="p.open = !p.open" [class.parent-active]="p.open" detail="false">
+          <ion-icon slot="start" [name]="p.icon" *ngIf="!p.open"></ion-icon>
+          <ion-icon slot="start" name="arrow-down" *ngIf="p.open"></ion-icon>
+          <ion-label>{{ p.title }}</ion-label>
+      </ion-item>
+
+
+      <!-- Children List for clicked Item -->
+      <div *ngIf="p.open" >
+          <ion-menu-toggle>
+              <ion-item button *ngFor="let sub of p.children"  class="sub-item" [routerLink]="sub.url" routerDirection="root" routerLinkActive="active">
+                  <ion-icon [name]="sub.icon" slot="start"></ion-icon>
+                  <ion-label>
+                      {{ sub.title }}
+                  </ion-label>
+              </ion-item>
+          </ion-menu-toggle>
+      </div>
+
+  </div>
+  </ion-content>
+</ion-menu>
+<ion-router-outlet main></ion-router-outlet>

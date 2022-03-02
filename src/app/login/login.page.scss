@@ -1,0 +1,35 @@
+
+:host {
+  ion-content {
+    --background: var(--ion-color-success-shade);
+  }
+}
+
+.paz {
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;  
+
+}
+
+.texto {
+  text-align: center;  
+}
+
+
+/*.list-form {
+  ion-label {    
+    color: var(--ion-color-light);
+  }
+  ion-input {
+    color: var(--ion-color-light);
+  }
+  input {
+  color: var(--ion-color-light);
+  }
+}*/

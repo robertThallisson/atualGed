@@ -1,0 +1,66 @@
+<ion-content class="animated fadeIn login auth-page ion-padding">
+  <div class="theme-bg"></div>
+  <div class="auth-content">
+    <!-- Logo -->
+    <ion-toolbar color="primary"> 
+      <ion-button (click)="aberto()">
+        <ion-icon name="cloud" slot="icon-only" color="light"></ion-icon> 
+      </ion-button>
+      <div padding-horizontal text-center class="animated fadeInDown">
+        <div align="center"><img src="/assets/sigobrabranco.png" alt="" width="300" height="150" /></div>      
+      </div>
+    </ion-toolbar>
+    <!-- Login form -->
+    <form #loginForm="ngForm" class="list-form" (keydown)="keyDownFunction($event)">
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">         
+          Login:
+        </ion-label>
+        <ion-input  name="username" [(ngModel)]="usuario.email"  type="email"></ion-input>
+      </ion-item>
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">          
+          Senha:
+        </ion-label>
+        <ion-input name="password"  [(ngModel)]="usuario.senha" type="password"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="btn" no-padding class="animated fadeInUp"> 
+        <ion-label >URL:</ion-label>
+        <ion-input name="urlb" [(ngModel)]="urlBase" type="text" ></ion-input>            
+      </ion-item>
+    </form>
+
+    <p text-right tappable  class="paz" class="texto" >
+      <ion-text color="primary" (click)="esqueceuSenha()">
+        <strong>Esqueceu Senha ?</strong>
+      </ion-text>
+    </p>
+
+    <div>
+      <ion-button icon-left size="medium" expand="full" shape="round" color="primary" (click)="logar()" 
+        tappable>
+        <ion-icon name="log-in"></ion-icon>
+        Logar
+      </ion-button>
+    </div>
+    <br/><br/><br/><br/>
+    <div text-center margin-top class="texto">
+      <span class="paz" tappable>
+        <ion-text color="primary">
+          <ion-icon name="mail-open"></ion-icon>          
+          Desenvolvido por 
+        </ion-text>
+        <ion-text color="dark">
+          <strong>MundoBit</strong>
+        </ion-text>
+        <ion-text color="danger">
+          <strong>Info</strong>
+        </ion-text>
+          
+          
+        
+      </span>
+    </div>
+
+  </div>
+</ion-content>

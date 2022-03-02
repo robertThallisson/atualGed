@@ -1,0 +1,49 @@
+<ion-content padding class="login auth-page">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-text color="light">
+        <ion-text color="light" class="fw700">Escritorios</ion-text>
+      </ion-text>
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <div padding-horizontal text-center>
+      <div class="logo"></div>
+      <h3 no-margin>
+        <ion-text color="light" class="fw700">
+          <ion-text color="light">Inserindo</ion-text>
+        </ion-text>
+      </h3>
+    </div>
+  </ion-toolbar>
+  <div class="auth-content">
+    <form class="list-form auth-conten" (keydown)="keyDownFunction($event)">
+
+      <input-mbi [(ngModel)]="escritorio.pessoaJuridica.razaoSocial" name="razaoSocial" label="RazaoSocial">
+      </input-mbi>
+      <input-mbi [(ngModel)]="escritorio.pessoaJuridica.nomeFantasia" name="nomeFantasia" label="NomeFantasia">
+      </input-mbi>
+      <input-mbi [(ngModel)]="escritorio.pessoaJuridica.cnpj" name="cnpj" label="Cnpj">
+      </input-mbi>
+      <input-mbi [(ngModel)]="escritorio.pessoaJuridica.logradouro" name="logradouro" label="Logradouro">
+      </input-mbi>
+      <input-mbi [(ngModel)]="escritorio.pessoaJuridica.bairro" name="bairro" label="Bairro">
+      </input-mbi>
+      <input-mbi [(ngModel)]="escritorio.pessoaJuridica.numero" name="numero" label="Numero">
+      </input-mbi>
+      <input-mbi [(ngModel)]="escritorio.pessoaJuridica.complemento" name="complemento" label="Complemento">
+      </input-mbi>
+      <input-mbi [(ngModel)]="escritorio.pessoaJuridica.dataAdessao" name="dataAdessao" label="DataAdessao">
+      </input-mbi>
+    </form>
+    <div margin-top>
+      <ion-button size="medium" expand="full" shape="round" icon-right tappable (click)="salvar()">
+        Confirmar
+        <ion-icon name="checkmark-circle" color="success"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

@@ -1,0 +1,16 @@
+<div  style="width: 100% !important;" class="clicavel itemconfiguration">
+    
+    
+    <ion-input #texto [name]="name" [brmasker]="{mask: mask, type:'num', len: mask.length}" [(ngModel)]="innerValue"
+        [placeholder]="mask"
+        (ionChange)="onChange($event)"
+        (ionBlur)="onBlur($event)"
+        (keydown)="keyDownData($event)"
+        (dblclick)="buscarData()"
+        >
+        <ion-button (ionFocus)="focusFunction($event)" Fill="clear" (click)="buscarData()" class="icon-left">
+            <ion-icon style="zoom: 1.5;" name="calendar" ></ion-icon>
+          </ion-button>
+
+    </ion-input>
+</div>

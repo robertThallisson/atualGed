@@ -1,0 +1,19 @@
+.botoes-multiselecao {
+    width: 100%;
+}
+
+.my-custom-class-modal-data {
+    .toolbar-background-md, .toolbar-background-ios, ion-calendar-week .week-title {
+      background-color: #424242;
+    }
+    .month-box {
+      background: #343434;
+      border-bottom: none;
+      h4 {
+        color: #fff;
+      }
+      button.days-btn > p {
+        color: #fff;
+      }
+    }
+  }

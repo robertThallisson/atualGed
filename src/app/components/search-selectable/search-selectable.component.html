@@ -1,0 +1,17 @@
+<div (keydown)="keyDown($event)" style="width: 100% !" [ngStyle]="{'height': getStyle() }" class="clicavel "
+    [ngClass]="{ 'itemconfiguration': isMultiple}">
+
+    
+
+    <ion-icon class="icon-left2" name="arrow-down" color="primary" ></ion-icon>
+    <ion-icon class="icon-left" name="close-circle" *ngIf="!base.isNullOrWhiteSpace(value)" color="danger" (click)="deletar()"
+    ></ion-icon>
+    <ion-input (click)="pesquisarItens($event)" [name]="name" *ngIf="!isMultiple || !temItem()"
+        value="{{ nameShow ? nameShow : ' '  }}" readonly></ion-input>
+
+    <span *ngIf="isMultiple && temItem() && value.length > 0" (click)="pesquisarItens($event)">
+        <div *ngFor="let item of value" class="ionic-selectable-value-item"> {{ getNome(item) }} </div>
+
+    </span>
+
+</div>

@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-buttons slot="start">
+    <ion-button (click)="closeAny()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </ion-button>
+  </ion-buttons>
+  <ion-toolbar color="primary">
+    <ion-item no-padding class="animated fadeInUp">
+      Foto
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <form class="form">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="12" size-sm class="">
+          <div>
+            <div>
+              <ion-text>&nbsp;Foto</ion-text>
+            </div>
+            <div>
+              <ion-item no-padding class="animated fadeInUp">
+                <ion-input name="imgLogo" type="file" color="primary" accept="image/*" capture="camera"
+                  (change)="onFileSelected($event)" id="fileInput" >
+                </ion-input>
+              </ion-item>
+            </div>
+            <div>
+              <ion-button fill="clear" expand="full" (click)="addFoto(1)" color="primary">
+                <ion-icon slot="start" name="camera"></ion-icon>
+                Tirar Foto
+              </ion-button>
+            </div>
+            <div>
+              <ion-img name="logo" *ngIf="data"
+              [src]="base.getImagem(data)"></ion-img>
+            </div>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
+
+</ion-content>
+
+<ion-footer >
+  <div>
+    <ion-button class="botoes-multiselecao" (click)="selecionar()" color="primary">
+      OK
+    </ion-button>
+  </div>
+  <div>
+    <ion-button  class="botoes-multiselecao" (click)="closeAny()" color="primary">
+      close
+    </ion-button>
+  </div>
+</ion-footer>

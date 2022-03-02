@@ -1,0 +1,51 @@
+<ion-list no-padding no-margin>
+  <ion-list-header color="dark">
+    <ion-label class="fw700">Notificações</ion-label>
+  </ion-list-header>
+
+   <!-- 
+     <ion-item color="primary" class="text-10">
+    <ion-icon name="mail" color="light"></ion-icon>
+    <ion-label>{{ item.mensagem }}</ion-label>
+  </ion-item>
+   -->
+  
+  <ion-card *ngFor="let item of notificaoService.notificacoes" button (click)="click(item)" >
+
+    <ion-card-header *ngIf="isNovidade(item)">
+      <ion-card-subtitle>Novidades</ion-card-subtitle>
+      <ion-card-title>você esta na versão 2 </ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content  *ngIf="isNovidade(item)">
+      {{ item.mensagem }}
+    </ion-card-content>
+
+    <ion-card-header *ngIf="isContaPagar(item)">
+      <ion-card-subtitle>Financeiro </ion-card-subtitle>
+      <ion-card-title>Contas a Receber</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content  *ngIf="isContaPagar(item)" >
+      {{ item.mensagem }}
+    </ion-card-content>
+
+    <ion-card-header *ngIf="isAgenda(item)">
+      <ion-card-subtitle>Horarios </ion-card-subtitle>
+      <ion-card-title>Agenda</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content  *ngIf="isAgenda(item)">
+      {{ item.mensagem }}
+    </ion-card-content>
+
+  </ion-card>
+  <!-- 
+    <ion-item color="light" class="text-10">
+      <ion-icon name="mail-open" color="primary"></ion-icon>
+      <ion-label>New Offer 15% OFF by month!</ion-label>
+    </ion-item>
+
+   -->
+
+</ion-list>
