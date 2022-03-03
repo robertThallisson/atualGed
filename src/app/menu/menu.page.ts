@@ -43,9 +43,9 @@ export class MenuPage implements OnInit {
       open: false,
       children: [
         {
-          title: 'Obras',
+          title: 'Escritorios',
           icon: 'construct',
-          url: '/obras',
+          url: '/escritorios',
         },
         {
           title: 'Status Itens',

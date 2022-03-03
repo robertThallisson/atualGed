@@ -4,5 +4,6 @@ export class Escritorio {
     id: number;
     ativo: boolean;
     pessoaJuridica: PessoaJuridica;
+    dataAdessao: any;
     contador: Array<Contador>;
 }

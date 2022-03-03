@@ -36,8 +36,15 @@
       </input-mbi>
       <input-mbi [(ngModel)]="escritorio.pessoaJuridica.complemento" name="complemento" label="Complemento">
       </input-mbi>
-      <input-mbi [(ngModel)]="escritorio.pessoaJuridica.dataAdessao" name="dataAdessao" label="DataAdessao">
-      </input-mbi>
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          &nbsp; Data Vencimento
+        </ion-label>
+        <data-mbi [(ngModel)]="escritorio.dataAdessao" name="dataVencimento" label="Data Adessao"
+          [apenasData]="true">
+        </data-mbi>
+      </ion-item>
     </form>
     <div margin-top>
       <ion-button size="medium" expand="full" shape="round" icon-right tappable (click)="salvar()">

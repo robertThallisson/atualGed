@@ -16,7 +16,8 @@ const routes: Routes = [
       {
         path: "home",
         loadChildren: () =>
-          import("../home/home.module").then(m => m.HomePageModule)
+          import("../home/home.module").then(m => m.HomePageModule),
+          canActivateChild: [AuthGuardService]
       },
       { path: 'login', loadChildren: () => import('../login/login.module').then(m => m.LoginPageModule) },
       {
@@ -24,7 +25,16 @@ const routes: Routes = [
         redirectTo: "home",
         pathMatch: "full"
       },
-
+      {
+        path: 'escritorios',
+        loadChildren: () => import('./../pages/escritorio/escritorios/escritorios.module').then(m => m.EscritoriosPageModule),
+        canActivateChild: [AuthGuardService]
+      },
+      {
+        path: 'escritorio-inserir',
+        loadChildren: () => import('./../pages/escritorio/escritorio-inserir/escritorio-inserir.module').then(m => m.EscritorioInserirPageModule),
+        canActivateChild: [AuthGuardService]
+      }
     ]
   }
 ];
