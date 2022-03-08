@@ -7,4 +7,6 @@ export class Empresa {
   socios: Array<any>;
   notas: Array<any>;
   uf: string;
+  
+  dataAdessao: any;
 }

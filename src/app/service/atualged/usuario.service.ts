@@ -1,4 +1,4 @@
-import { Usuario } from './../../model/objetc/usuario';
+import { Usuario } from '../../model/objetc/usuario';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AutentificacaoService } from '../autentificacao/autentificacao.service';
@@ -40,8 +40,8 @@ export class UsuarioService {
     return this.http.post(this.as.url + this.url + '/pesquisar', value, this.as.getOptions());
   }
 
-  public pesquisa(value: string) {
-    return this.http.post(this.as.url + this.url + '/pesquisa', value, this.as.getOptions());
+  public pesquisarUltimosRegistros() {
+    return this.http.get(this.as.url + this.url + '/pesquisarultimosregistro', this.as.getOptions());
   }
 
   public confirmaSenha(usuario: Usuario) {

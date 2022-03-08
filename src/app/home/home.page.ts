@@ -51,7 +51,7 @@ export class HomePage implements OnInit {
   }
 
   gotoTipoinspecoes() {
-    this.router.navigate(['tipoinspecoes']);
+    this.router.navigate(['usuarios']);
   }
 
   gotoStatus() {

@@ -1,4 +1,4 @@
-import { Empresa } from "./empresa";
+import { Escritorio } from './escritorio';
 
 export class Pessoa {
   id: number;
@@ -17,5 +17,5 @@ export class Pessoa {
   estado: string;
   foto: any;
   ativo: boolean;
-  empresa: Empresa;
+  escritorio: Escritorio;
 }

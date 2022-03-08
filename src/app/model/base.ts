@@ -1,5 +1,3 @@
-import { PessoaJuridica } from './objetc/PessoaJuridica';
-//import { Empresa } from './objetc/empresa';
 import { Router } from '@angular/router';
 import { Injectable, OnInit } from '@angular/core';
 import {
@@ -18,12 +16,13 @@ import { FileOpener } from '@awesome-cordova-plugins/file-opener/ngx';
 import { File } from '@awesome-cordova-plugins/file/ngx';
 //import 'rxjs/add/operator/map';
 import * as FileSaver from 'file-saver';
-import { UsuarioService } from '../service/sigobra/usuario.service';
+import { UsuarioService } from '../service/atualged/usuario.service';
 import { AutentificacaoService } from '../service/autentificacao/autentificacao.service';
 import { Usuario } from './objetc/usuario';
 import { Token } from './seguranca/token';
 import { ViacepService } from '../service/viacep/viacep.service';
 import { Pesquisa } from './objetc/filtro/pesquisa';
+import { Pessoa } from './objetc/pessoa';
 
 @Injectable({
   providedIn: 'root',
@@ -872,8 +871,8 @@ export class Base {
             this.present('Atualizando Senha');
             const msgErro = 'Erro ao atualizar senha :';
             const usuario: Usuario = new Usuario();
-            usuario.pessoaJuridica = new PessoaJuridica();
-            usuario.pessoaJuridica.cnpj = data.cpf;
+            usuario.pessoa = new Pessoa();
+            usuario.pessoa.cpf = data.cpf;
             usuario.senha = data.novaSenha;
             this.as.getNewTokenRegisto().subscribe(
               (parameter) => {

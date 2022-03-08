@@ -1,0 +1,162 @@
+<ion-content padding class="login auth-page">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-text color="light">
+        <ion-text color="light" class="fw700">Usuário
+        </ion-text>
+      </ion-text>
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <div padding-horizontal text-center>
+      <div class="logo"></div>
+      <h3 no-margin>
+        <ion-text color="light" class="fw700">
+          <ion-text color="light">&nbsp;Inserindo</ion-text>
+        </ion-text>
+      </h3>
+    </div>
+  </ion-toolbar>
+  <div class="auth-content">
+    <form class="list-form auth-conten" (keydown)="keyDownFunction($event)">
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          &nbsp; Escritorio
+        </ion-label>
+        <search-selectable  [(ngModel)]="usuario.pessoa.escritorio" item-content name="empresas" [service]="escritorioService" itemTextField="pessoaJuridica.razaoSocial">
+        </search-selectable>
+      </ion-item>
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          &nbsp;Nome
+        </ion-label>
+        <ion-input [(ngModel)]="usuario.pessoa.nome" name="nome" type="text"></ion-input>
+      </ion-item>
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          &nbsp;CPF
+        </ion-label>
+        <ion-input [(ngModel)]="usuario.pessoa.cpf" name="cpf" type="text" placeholder=" " 
+                   [brmasker]="{person: true}"></ion-input>
+      </ion-item>
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          &nbsp;RG
+        </ion-label>
+        <ion-input [(ngModel)]="usuario.pessoa.rg" name="rg" type="text"></ion-input>
+      </ion-item>
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          &nbsp;Telefone
+        </ion-label>
+        <ion-input [(ngModel)]="usuario.pessoa.telefone1" name="telefone1" type="text" 
+                   [brmasker]="{phone: true}"></ion-input>
+      </ion-item>
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          &nbsp;Telefone 2
+        </ion-label>
+        <ion-input [(ngModel)]="usuario.pessoa.telefone2" name="telefone2" type="text" 
+                   [brmasker]="{phone: true}"></ion-input>
+      </ion-item>
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          &nbsp;CEP
+        </ion-label>
+        <ion-input [(ngModel)]="usuario.pessoa.cep" name="cep" type="text" (ionBlur)= "consultaCEP($event.target.value)"
+                   [brmasker]="{mask:'00.000-000', len:10, userCaracters: true}"></ion-input>
+      </ion-item>
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          &nbsp;Numero
+        </ion-label>
+        <ion-input [(ngModel)]="usuario.pessoa.numero" name="numero" type="text"></ion-input>
+      </ion-item>
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          &nbsp;Complemento
+        </ion-label>
+        <ion-input [(ngModel)]="usuario.pessoa.complemento" name="complemento" type="text"></ion-input>
+      </ion-item>
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          &nbsp;Logradouro
+        </ion-label>
+        <ion-input [(ngModel)]="usuario.pessoa.logradouro" name="logradouro" type="text"></ion-input>
+      </ion-item>
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          &nbsp;Bairro
+        </ion-label>
+        <ion-input [(ngModel)]="usuario.pessoa.bairro" name="bairro" type="text"></ion-input>
+      </ion-item>
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          &nbsp;UF
+        </ion-label>
+        <ion-input [(ngModel)]="usuario.pessoa.uf" name="uf" type="text"></ion-input>
+      </ion-item>    
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          &nbsp;Estado
+        </ion-label>
+        <ion-input [(ngModel)]="usuario.pessoa.estado" name="estado" type="text"></ion-input>
+      </ion-item> 
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          &nbsp;Login
+        </ion-label>
+        <ion-input [(ngModel)]="usuario.login" name="login" type="text"></ion-input>
+      </ion-item>
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          &nbsp;E-Mail
+        </ion-label>
+        <ion-input [(ngModel)]="usuario.email" name="email" type="email"></ion-input>
+      </ion-item>
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          &nbsp;Senha
+        </ion-label>
+        <ion-input [(ngModel)]="usuario.senha" name="senha" type="password"></ion-input>
+      </ion-item>     
+      <ion-grid>
+        <ion-row>
+            <ion-col size="12" size-sm class="">
+              <div>
+                <div>
+                  <ion-text>&nbsp;Foto</ion-text> 
+                </div>
+                <div>  
+                  <ion-item no-padding class="animated fadeInUp">   
+                    <input name="imgLogo" type="file" class="olho" accept="image/*"
+                           capture="camera" (change)="onFileSelected($event)" id="fileInput" /> 
+                  </ion-item> 
+                </div>
+                <div>
+                  <ion-button fill="clear" expand="full" (click)="tirarFoto()">
+                    <ion-icon slot="start" name="camera"></ion-icon>
+                      Tirar Foto
+                  </ion-button>  
+                </div>
+                <div>                
+                  <ion-img name="logo" *ngIf="temFoto()"
+                           [src]="base.getImagem(usuario.pessoa.foto)"></ion-img> 
+                </div>
+              </div>  
+            </ion-col>
+          </ion-row>
+        </ion-grid> 
+    </form>
+    <div margin-top>
+      <ion-button size="medium" expand="full" shape="round" color="primary" icon-right tappable (click)="salvar()">
+        Salvar
+        <ion-icon name="checkmark-circle" color="success"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

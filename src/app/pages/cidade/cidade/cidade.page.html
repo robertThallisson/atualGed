@@ -1,0 +1,47 @@
+<ion-content padding class="login auth-page">
+  <custom-menu [(ngModel)]="cidades" nome="Cidades" [pesquisar]="cidadeService.pesquisar.bind(cidadeService)"
+    [pesquisarUltimos]="cidadeService.pesquisarUltimosRegistros.bind(cidadeService)" pageName="cidade">
+
+  </custom-menu>
+
+  <div class="auth-content">
+    <br>
+    <table>
+      <thead>
+        <tr>
+          <th> Nome </th>
+          <th> CodigoIbge </th>
+          <th style="width: 150px;"> A��es </th>
+        </tr>
+      </thead>
+
+      <tr *ngFor="let item of cidades">
+        <td>{{ item.nome }}</td>
+        <td>{{ item.codigoIbge }}</td>
+        <td>
+          <ion-button size="small" shape="round" color="primary" icon-right tappable (click)="editar(item)">
+            <ion-icon name="create" color="warning"></ion-icon>
+
+          </ion-button>
+
+          <ion-button size="small" shape="round" color="primary" icon-right tappable (click)="excluir(item)">
+            <ion-icon name="trash" color="danger"></ion-icon>
+
+          </ion-button>
+        </td>
+      </tr>
+      <tr *ngIf="!temRegistros()">
+        <td colspan="2">
+          Sem registros
+        </td>
+      </tr>
+    </table>
+    <div margin-top aling="center" class="fixa-bottom">
+      <ion-button color="primary" size="medium" expand="full" shape="round" icon-right tappable (click)="inserir()">
+        Inserir
+        <ion-icon name="arrow-dropright-circle"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+
+</ion-content>

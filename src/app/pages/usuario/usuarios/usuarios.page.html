@@ -1,0 +1,50 @@
+<ion-content padding class="login auth-page">
+  <custom-menu [(ngModel)]="usuarios" nome="Usuarios" [pesquisar]="us.pesquisar.bind(us)"
+    [pesquisarUltimos]="us.pesquisarUltimosRegistros.bind(us)" pageName="usuarios">
+
+  </custom-menu>
+
+  <div class="auth-content">
+    <br>
+    <table>
+      <thead>
+        <tr>
+          <th> Nome </th>
+          <th> Email </th>
+          <th style="width: 250px;"> Açoes </th>
+        </tr>
+      </thead>
+
+      <tr *ngFor="let item of usuarios">
+        <td>{{ item.nome }}</td>
+        <td>{{ item.pessoa.email }}</td>
+        <td>
+          <ion-button  shape="round" color="primary" icon-right tappable (click)="alteraSenha(usuario)">
+            <ion-icon name="keypad"></ion-icon>
+          </ion-button>
+          <ion-button  shape="round" color="primary" icon-right tappable (click)="permissaoUsuario(usuario)">
+            <ion-icon name="key-outline"></ion-icon>
+          </ion-button>
+          <ion-button  shape="round" color="primary" icon-right tappable (click)="editar(usuario)">
+            <ion-icon name="create" color="warning"></ion-icon>
+          </ion-button>
+          <ion-button  shape="round" color="primary" icon-right tappable (click)="excluir(usuario)" >
+            <ion-icon name="trash" color="danger"></ion-icon>
+          </ion-button>
+        </td>
+      </tr>
+      <tr *ngIf="!temRegistros()">
+        <td colspan="2">
+          Sem registros
+        </td>
+      </tr>
+    </table>
+    <div margin-top aling="center" class="fixa-bottom">
+      <ion-button color="primary" size="medium" expand="full" shape="round" icon-right tappable (click)="inserir()">
+        Inserir
+        <ion-icon name="arrow-dropright-circle"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+
+</ion-content>

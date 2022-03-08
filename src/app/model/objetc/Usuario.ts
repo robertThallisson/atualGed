@@ -1,5 +1,5 @@
+import { Pessoa } from './Pessoa';
 import { PerfilUsuario } from "./PerfilUsuario";
-import { PessoaJuridica } from "./PessoaJuridica";
 
 export class Usuario {
   id: number;
@@ -8,6 +8,6 @@ export class Usuario {
   senha: string;
   dataBloqueio: any;
   ativo: boolean;
-  pessoaJuridica: PessoaJuridica;
+  pessoa: Pessoa;
   perfilUsuario: PerfilUsuario;
 }

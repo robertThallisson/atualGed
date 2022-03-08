@@ -6,4 +6,5 @@ export class Cidade {
   cep: number;
   estado: Estado;
   ativo: boolean;
+  codigoIbge: string
 }

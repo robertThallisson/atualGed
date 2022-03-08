@@ -1,0 +1,52 @@
+<ion-content padding class="login auth-page">
+  <custom-menu nome="Perfil de Usuário"  pageName="perfil-usuario" [(ngModel)]="perfisUsuarios"
+  [pesquisar]="pa.pesquisar.bind(pa)" [pesquisarUltimos]="pa.pesquisarUltimosRegistros.bind(pa)" >
+
+  </custom-menu>
+  <div class="auth-content">
+    <br>
+    <table>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Nome</th>
+          <th style="width: 250px;">Ações</th>
+        </tr>
+      </thead>
+
+      <tr *ngFor="let item of perfisUsuarios">
+        <td *ngIf="item.id !== 1 || base.isAdministrador()">{{ item.id }}</td>
+        <td *ngIf="item.id !== 1 || base.isAdministrador()">{{ item.nome }}</td>
+        <td *ngIf="(item.id !== 1 && item.id !== 2 ) || base.isAdministrador()">
+          <ion-button size="small" shape="round" color="primary" icon-right tappable (click)="editar(item)">
+            <ion-icon name="create" color="warning"></ion-icon>
+            Editar
+          </ion-button>
+          <ion-button size="small" shape="round" color="primary" icon-right tappable (click)="deletar(item)">
+            <ion-icon name="trash" color="danger"></ion-icon>
+            Excluir
+          </ion-button>
+        </td>
+      </tr>
+
+      <tr *ngIf="!temRegistros()">
+        <td colspan="3">
+          Sem registros
+        </td>
+      </tr>
+    </table>
+    <div margin-top aling="center" class="fixa-bottom">
+      <ion-button color="primary" size="medium" expand="full" shape="round" icon-right tappable (click)="inserir()">
+        Inserir
+      </ion-button>
+    </div>
+    <div margin-top aling="center" class="fixa-bottom">
+      <ion-button color="primary" size="medium" expand="full" shape="round" icon-right tappable
+        (click)="permissaoUsuario()">
+        <ion-icon name="key"></ion-icon>
+        Autorizar Usuario
+      </ion-button>
+    </div>
+  </div>
+
+</ion-content>

@@ -1,0 +1,51 @@
+<ion-content padding class="login auth-page">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text="" defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-text color="light">
+        <ion-text color="light" class="fw700">Perfil Usuário
+        </ion-text>
+      </ion-text>
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <div padding-horizontal text-center>
+      <div class="logo"></div>
+      <h3 no-margin>
+        <ion-text color="light" class="fw700">
+          <ion-text color="light"> &nbsp;Autorização</ion-text>
+        </ion-text>
+      </h3>
+    </div>
+  </ion-toolbar>
+  <div class="auth-content">
+    <form class="list-form auth-content">
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          &nbsp; Usuário
+        </ion-label>
+        <search-selectable name="pusuario" [service]="us" [(ngModel)]="usuario" itemTextField="login" (onClean)="onClean($event)">
+        </search-selectable>
+      </ion-item>
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          &nbsp; Perfil Usuário
+        </ion-label>
+        <search-selectable name="perfilUsuario" [service]="pa" [(ngModel)]="usuario.perfilUsuario"
+          >
+
+        </search-selectable>
+      </ion-item>
+    </form>
+    <div margin-top aling="center" class="fixa-bottom">
+      <ion-button color="primary" size="medium" expand="full" shape="round" icon-right tappable (click)="salvar()">
+        Salvar
+        <ion-icon name="arrow-dropright-circle" color="success"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+
+</ion-content>

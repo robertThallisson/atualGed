@@ -1,6 +1,6 @@
 import { Usuario } from './../model/objetc/usuario';
 import { Component, OnInit } from '@angular/core';
-import { UsuarioService } from '../service/sigobra/usuario.service';
+import { UsuarioService } from '../service/atualged/usuario.service';
 import { Router } from '@angular/router';
 import { Base } from '../model/base';
 import { AutentificacaoService } from '../service/autentificacao/autentificacao.service';
@@ -48,9 +48,9 @@ export class MenuPage implements OnInit {
           url: '/escritorios',
         },
         {
-          title: 'Status Itens',
+          title: 'Cidades',
           icon: 'attach',
-          url: '/statusitensinspecoes',
+          url: '/cidade',
         },
         {
           title: 'Unidade',
@@ -197,9 +197,9 @@ export class MenuPage implements OnInit {
       if (
         this.as.token != null &&
         this.as.token.usuario != null &&
-        this.as.token.usuario.pessoaJuridica.foto != null
+        this.as.token.usuario.pessoa.foto != null
       ) {
-        return "data:image/jpeg;base64," + this.as.token.usuario.pessoaJuridica.foto;
+        return "data:image/jpeg;base64," + this.as.token.usuario.pessoa.foto;
       } else {
         return "/assets/img/boy-512.png";
       }

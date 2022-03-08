@@ -1,0 +1,45 @@
+<ion-content padding class="login auth-page">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      <ion-text color="light">
+        <ion-text color="light" class="fw700">Cidades</ion-text>
+      </ion-text>
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <div padding-horizontal text-center>
+      <div class="logo"></div>
+      <h3 no-margin>
+        <ion-text color="light" class="fw700">
+          <ion-text color="light">Inserindo</ion-text>
+        </ion-text>
+      </h3>
+    </div>
+  </ion-toolbar>
+  <div class="auth-content">
+    <form class="list-form auth-conten" (keydown)="keyDownFunction($event)">
+      
+      
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          &nbsp; Estado
+        </ion-label>
+        <search-selectable  [(ngModel)]="cidade.estado" name="estado" [service]="estadoService" ></search-selectable>
+      </ion-item>
+  <input-mbi [(ngModel)]="cidade.nome" name="nome" label="Nome">
+   </input-mbi>      
+  <input-mbi [(ngModel)]="cidade.codigoIbge" name="codigoIbge" label="Codigo Ibge">
+   </input-mbi>      
+    </form>
+    <div margin-top>
+      <ion-button size="medium" expand="full" shape="round" icon-right tappable (click)="salvar()">
+        Confirmar 
+        <ion-icon name="checkmark-circle" color="success"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+</ion-content>

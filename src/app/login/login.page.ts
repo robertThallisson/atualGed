@@ -5,7 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { AutentificacaoService } from '../service/autentificacao/autentificacao.service';
 import { Router } from '@angular/router';
 import { Base } from '../model/base';
-import { UsuarioService } from '../service/sigobra/usuario.service';
+import { UsuarioService } from '../service/atualged/usuario.service';
 import { EmpresaService } from '../service/sigobra/empresa.service';
 //import { Empresa } from '../model/objetc/empresa';
 
@@ -34,7 +34,7 @@ export class LoginPage implements OnInit {
   urlBase = '';
   ngOnInit() {
 
-    if (this.base.isNullOrWhiteSpace(localStorage.getItem('urlBase'))) {
+    if (!this.base.isNullOrWhiteSpace(localStorage.getItem('urlBase'))) {
       this.urlBase = localStorage.getItem('urlBase');
     } else {
       this.urlBase = this.as.url;
