@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { PermissoesAcessoService } from '../../../service/anamnese/permissoes-acesso.service';
 import { Base } from '../../../model/base';
 import { Permissao } from '../../../model/objetc/permissao';
 import { PerfilUsuario } from '../../../model/objetc/perfil-usuario';
 import { Router } from '@angular/router';
+import { PermissoesAcessoService } from '../../../service/atualged/permissoes-acesso.service';
 @Component({
   selector: 'app-perfil-usuario-inserir',
   templateUrl: './perfil-usuario-inserir.page.html',
@@ -13,7 +13,7 @@ export class PerfilUsuarioInserirPage implements OnInit {
 
   permissoes: Array<Permissao>;
   perfilUsuario: PerfilUsuario = new PerfilUsuario();
-  constructor(public pa: PermissoesAcessoService,
+  constructor(public pa: PermissoesAcessoService ,
     private base: Base,
     private router: Router) {
       if (this.pa.perfilUsuario !== undefined && this.pa.perfilUsuario !== null) {
@@ -28,7 +28,7 @@ export class PerfilUsuarioInserirPage implements OnInit {
 
   salvar() {
     this.base.present();
-    this.perfilUsuario.empresa  = this.pa.as.token.empresa;
+    this.perfilUsuario.escritorio  = this.pa.as.token.escritorio;
     this.pa.salvarPerfilUsuario(this.perfilUsuario).subscribe(
       data => {
         this.base.dismiss();

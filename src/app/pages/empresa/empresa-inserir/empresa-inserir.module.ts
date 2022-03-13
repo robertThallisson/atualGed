@@ -1,3 +1,4 @@
+import { InputMbiModule } from './../../../components/input/input-mbi/input-mbi.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -13,7 +14,8 @@ import { EmpresaInserirPage } from './empresa-inserir.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    EmpresaInserirPageRoutingModule
+    EmpresaInserirPageRoutingModule,
+    InputMbiModule
   ],
   declarations: [EmpresaInserirPage]
 })

@@ -21,5 +21,10 @@ import { HttpClient } from '@angular/common/http';
    pesquisarUltimosRegistros() {
      return this.http.get(this.as.url + this.url + '/pesquisarultimosregistro', this.as.getOptions());
    }
+
+
+   getImagem(value: number) { 
+    return this.http.post(this.as.url + this.url + '/pesquisar', value, this.as.getOptions());
+  }
  }
  

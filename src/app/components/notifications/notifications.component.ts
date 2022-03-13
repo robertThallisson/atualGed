@@ -1,8 +1,8 @@
 import { Notificacao } from './../../model/objetc/notificacao';
 import { Router } from '@angular/router';
 import { TipoNotificacao } from './../../model/enums/tipo-notificacao.enum';
-import { NotificaoService } from './../../service/sigobra/notificao.service';
 import { Component, OnInit } from '@angular/core';
+import { NotificaoService } from '../../service/atualged/notificao.service';
 
 @Component({
   selector: 'app-notifications',

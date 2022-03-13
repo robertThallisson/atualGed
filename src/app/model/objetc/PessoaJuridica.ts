@@ -5,6 +5,8 @@ export class PessoaJuridica {
   razaoSocial: string;
   nomeFantasia: string;
   cnpj: string;
+
+  cep: string;
   logradouro: string;
   bairro: string;
   numero: number;

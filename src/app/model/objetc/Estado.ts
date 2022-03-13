@@ -5,5 +5,8 @@ export class Estado {
   uf: string;
   nome: string;
   ativo: boolean;
+  ibge: number;
+  pais: any;
+  ddd: string;
   cidade: Array<Cidade>;
 }

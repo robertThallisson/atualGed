@@ -9,6 +9,7 @@ import { IonicModule } from '@ionic/angular';
 import { EscritorioInserirPageRoutingModule } from './escritorio-inserir-routing.module';
 
 import { EscritorioInserirPage } from './escritorio-inserir.page';
+import { SearchSelectableModule } from '../../../components/search-selectable/search-selectable.module';
 
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import { EscritorioInserirPage } from './escritorio-inserir.page';
     EscritorioInserirPageRoutingModule,
     InputMbiModule,
     DataInputModule,
+    SearchSelectableModule
   ],
   declarations: [EscritorioInserirPage]
 })

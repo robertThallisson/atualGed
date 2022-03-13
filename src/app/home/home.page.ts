@@ -1,8 +1,8 @@
+import { EmpresaService } from './../service/atualged/empresa.service';
 import { NotificationsComponent } from "./../components/notifications/notifications.component";
 import { Component, OnInit } from "@angular/core";
 import { Router } from '@angular/router';
 import { AutentificacaoService } from '../service/autentificacao/autentificacao.service';
-import { EmpresaService } from '../service/sigobra/empresa.service';
 import { Base } from '../model/base';
 
 
@@ -16,17 +16,22 @@ export class HomePage implements OnInit {
   emp: string;
   logo: any;
 
-  constructor(private router: Router, private as: AutentificacaoService, private es: EmpresaService, public base: Base) {
+  constructor(
+    private router: Router, 
+    private as: AutentificacaoService, 
+    private es: EmpresaService, 
+    public base: Base
+  ) {
 
   }
 
   ngOnInit() {
     try {
-      if (this.as.token.empresa.pessoaJuridica.razaoSocial === "") {
+      if (this.as.token.escritorio.pessoaJuridica.razaoSocial === "") {
         this.emp = "Mundobit Informática"
       } else {
-        this.emp = this.as.token.empresa.pessoaJuridica.razaoSocial;
-        this.logo = this.as.token.empresa.pessoaJuridica.razaoSocial;
+        this.emp = this.as.token.escritorio.pessoaJuridica.razaoSocial;
+        this.logo = this.as.token.escritorio.pessoaJuridica.razaoSocial;
       }
 
       if (this.as.deveAtualizarSenha) {

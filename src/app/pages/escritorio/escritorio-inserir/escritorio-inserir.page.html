@@ -22,12 +22,25 @@
   <div class="auth-content">
     <form class="list-form auth-conten" (keydown)="keyDownFunction($event)">
 
-      <input-mbi [(ngModel)]="escritorio.pessoaJuridica.razaoSocial" name="razaoSocial" label="RazaoSocial">
+      <input-mbi [(ngModel)]="escritorio.pessoaJuridica.razaoSocial" name="razaoSocial" label="Razao Social">
       </input-mbi>
-      <input-mbi [(ngModel)]="escritorio.pessoaJuridica.nomeFantasia" name="nomeFantasia" label="NomeFantasia">
+      <input-mbi [(ngModel)]="escritorio.pessoaJuridica.nomeFantasia" name="nomeFantasia" label="Nome Fantasia">
       </input-mbi>
-      <input-mbi [(ngModel)]="escritorio.pessoaJuridica.cnpj" name="cnpj" label="Cnpj">
-      </input-mbi>
+      <mask-mbi [(ngModel)]="escritorio.pessoaJuridica.cnpj" name="cnpj" label="Cnpj" [mask]="{person: true}">
+      </mask-mbi>
+
+      <mask-mbi [(ngModel)]="escritorio.pessoaJuridica.cep" name="cep" label="CEP"
+        [mask]="{mask:'00.000-000', len:10, userCaracters: true}" (ionBlur)="consultaCEP($event.target.value)">
+      </mask-mbi>
+
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          &nbsp;Cidade 
+        </ion-label>
+        <search-selectable [(ngModel)]="escritorio.pessoaJuridica.cidade" name="cidade" [service]="cs">
+        </search-selectable>
+      </ion-item>
       <input-mbi [(ngModel)]="escritorio.pessoaJuridica.logradouro" name="logradouro" label="Logradouro">
       </input-mbi>
       <input-mbi [(ngModel)]="escritorio.pessoaJuridica.bairro" name="bairro" label="Bairro">
@@ -45,15 +58,14 @@
 
       </currency-mbi>
 
-      <currency-mbi [(ngModel)]="escritorio.baseCliente" name="baseCliente" label="Base Cliente">
+      <currency-mbi [(ngModel)]="escritorio.baseCliente" name="baseCliente" label="Base Cliente" [inteiro]="true">
 
       </currency-mbi>
       <ion-item no-padding class="animated fadeInUp">
         <ion-label position="floating">
           &nbsp; Data Vencimento
         </ion-label>
-        <data-mbi [(ngModel)]="escritorio.dataAdessao" name="dataVencimento" label="Data Adessao"
-          [apenasData]="true">
+        <data-mbi [(ngModel)]="escritorio.dataAdessao" name="dataVencimento" label="Data Adessao" [apenasData]="true">
         </data-mbi>
       </ion-item>
     </form>

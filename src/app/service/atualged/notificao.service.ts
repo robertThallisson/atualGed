@@ -1,9 +1,9 @@
 import { Notificacao } from './../../model/objetc/notificacao';
 import { TipoNotificacao } from './../../model/enums/tipo-notificacao.enum';
-import { isNullOrWhiteSpace } from '../../funcoes/funcoes';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AutentificacaoService } from '../autentificacao/autentificacao.service';
+import { isNullOrWhiteSpace } from '../../funcoes/funcoes';
 
 @Injectable({
   providedIn: 'root'

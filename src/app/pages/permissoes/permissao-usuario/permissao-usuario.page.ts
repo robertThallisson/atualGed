@@ -3,8 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Usuario } from '../../../model/objetc/usuario';
 import { Base } from '../../../model/base';
-import { UsuarioService } from '../../../service/anamnese/usuario.service';
-import { PermissoesAcessoService } from '../../../service/anamnese/permissoes-acesso.service';
+import { UsuarioService } from '../../../service/atualged/usuario.service';
+import { PermissoesAcessoService } from '../../../service/atualged/permissoes-acesso.service';
 
 @Component({
   selector: 'app-permissao-usuario',

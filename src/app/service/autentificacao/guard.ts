@@ -91,7 +91,7 @@ export class Guard implements CanActivate, CanActivateChild {
     }
 
     if (isNullOrWhiteSpace(this.modulo)) {
-      menu.close();
+      //menu.close();
       return true;
     }
 
@@ -110,7 +110,7 @@ export class Guard implements CanActivate, CanActivateChild {
           '</br> e adiquira já o modulo financeiro </br> fones </br> (62) 98641-5767 </br> (62) 98199-3111'
       );
     } else {
-      menu.close();
+    //    menu.close();
     }
 
     return temModulo;

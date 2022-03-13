@@ -1,3 +1,4 @@
+import { Estado } from './../../../model/enums/estado.enum';
 import { PessoaJuridica } from "./../../../model/objetc/PessoaJuridica";
 import { Base } from "./../../../model/base";
 import { Router } from "@angular/router";
@@ -5,6 +6,7 @@ import { EscritorioService } from "./../../../service/atualged/escritorio.servic
 import { Component, OnInit } from "@angular/core";
 import { Escritorio } from "../../../model/objetc/escritorio";
 import { isNullOrWhiteSpace } from "../../../funcoes/funcoes";
+import { CidadeService } from '../../../service/atualged/cidade.service';
 
 @Component({
   selector: "app-escritorio-inserir",
@@ -16,7 +18,8 @@ export class EscritorioInserirPage implements OnInit {
   constructor(
     private escritorioService: EscritorioService,
     private base: Base,
-    private router: Router
+    private router: Router,
+    public cs: CidadeService
   ) {}
 
   ngOnInit() {
@@ -56,6 +59,32 @@ export class EscritorioInserirPage implements OnInit {
     );
   }
 
+  consultaCEP(cep) {
+    this.base.consultaCEP(cep, this.popula.bind(this));
+  }
+
+  popula(cep) {
+    if (cep.erro !== undefined && cep.erro !== null && cep.erro) {
+      this.base.mensagemErro('Falha ao consultar endereço do CEP');
+      return;
+    }
+    this.escritorio.pessoaJuridica.logradouro = cep.logradouro;
+    this.escritorio.pessoaJuridica.complemento = cep.complemento;
+    this.escritorio.pessoaJuridica.bairro = cep.bairro;
+
+
+    this.cs.pesquisar(cep.ibge).subscribe(
+      data => {
+        const value = data as any;
+        if(!isNullOrWhiteSpace(value) && value.length ) {
+          this.escritorio.pessoaJuridica.cidade = value[0];
+        }
+      },
+      error => {
+
+      }
+    );
+  }
   keyDownFunction(event: any) {
     if (event.keyCode === 13) {
       this.salvar();

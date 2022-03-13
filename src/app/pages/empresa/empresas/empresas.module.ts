@@ -1,3 +1,4 @@
+import { CustomMenuModule } from './../../../components/custom-menu/custom-menu.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -13,7 +14,8 @@ import { EmpresasPage } from './empresas.page';
     CommonModule,
     FormsModule,
     IonicModule,
-    EmpresasPageRoutingModule
+    EmpresasPageRoutingModule,
+    CustomMenuModule
   ],
   declarations: [EmpresasPage]
 })

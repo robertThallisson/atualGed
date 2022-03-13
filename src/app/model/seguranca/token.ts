@@ -1,5 +1,5 @@
 import { Usuario } from '../objetc/usuario';
-import { Empresa } from '../objetc/empresa';
+import { Escritorio } from '../objetc/escritorio';
 export class Token {
     access_token: string;
     token_type: string;
@@ -8,6 +8,6 @@ export class Token {
     nome: string;
     sti: string;
     usuario: Usuario;
-    empresa: Empresa;
+    escritorio: Escritorio;
     modulo: any;
 }

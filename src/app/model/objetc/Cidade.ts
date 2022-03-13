@@ -4,7 +4,11 @@ export class Cidade {
   id: number;
   nome: string;
   cep: number;
+  ibge: number;
   estado: Estado;
   ativo: boolean;
-  codigoIbge: string
+  latLon: string;
+  latitude: number;
+  longitude: number;
+  codTom: number;
 }

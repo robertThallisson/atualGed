@@ -99,7 +99,7 @@ const routes: Routes = [
           import("./../pages/usuario/usuarios/usuarios.module").then(
             (m) => m.UsuariosPageModule
           ),
-          canActivateChild: [AuthGuardService],
+        canActivateChild: [AuthGuardService],
       },
       {
         path: "usuario-inserir",
@@ -107,7 +107,31 @@ const routes: Routes = [
           import(
             "./../pages/usuario/usuario-inserir/usuario-inserir.module"
           ).then((m) => m.UsuarioInserirPageModule),
-          canActivateChild: [AuthGuardService],
+        canActivateChild: [AuthGuardService],
+      },
+      {
+        path: "perfil-usuario",
+        loadChildren: () =>
+          import(
+            "./../pages/permissoes/perfil-usuario/perfil-usuario.module"
+          ).then((m) => m.PerfilUsuarioPageModule),
+        canActivateChild: [AuthGuardService],
+      },
+      {
+        path: "perfil-usuario-inserir",
+        loadChildren: () =>
+          import(
+            "./../pages/permissoes/perfil-usuario-inserir/perfil-usuario-inserir.module"
+          ).then((m) => m.PerfilUsuarioInserirPageModule),
+        canActivateChild: [AuthGuardService],
+      },
+      {
+        path: "permissao-usuario",
+        loadChildren: () =>
+          import(
+            "./../pages/permissoes/permissao-usuario/permissao-usuario.module"
+          ).then((m) => m.PermissaoUsuarioPageModule),
+        canActivateChild: [AuthGuardService],
       },
     ],
   },

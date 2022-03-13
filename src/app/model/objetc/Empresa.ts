@@ -1,12 +1,12 @@
+import { Escritorio } from './escritorio';
 import { PessoaJuridica } from "./PessoaJuridica";
 
 export class Empresa {
   id: number;
   ativo: boolean;
   pessoaJuridica: PessoaJuridica;
-  socios: Array<any>;
-  notas: Array<any>;
+  //socios: Array<List>;
+  //notas: Array<List>;
   uf: string;
-  
-  dataAdessao: any;
+  escritorio: Escritorio;
 }

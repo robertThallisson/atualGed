@@ -6,7 +6,6 @@ import { AutentificacaoService } from '../service/autentificacao/autentificacao.
 import { Router } from '@angular/router';
 import { Base } from '../model/base';
 import { UsuarioService } from '../service/atualged/usuario.service';
-import { EmpresaService } from '../service/sigobra/empresa.service';
 //import { Empresa } from '../model/objetc/empresa';
 
 @Component({

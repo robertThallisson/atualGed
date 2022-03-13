@@ -1,10 +1,10 @@
+import { EmpresaService } from './../service/atualged/empresa.service';
 import { Usuario } from './../model/objetc/usuario';
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../service/atualged/usuario.service';
 import { Router } from '@angular/router';
 import { Base } from '../model/base';
 import { AutentificacaoService } from '../service/autentificacao/autentificacao.service';
-import { EmpresaService } from '../service/sigobra/empresa.service';
 //import { Empresa } from '../model/objetc/empresa';
 import { MenuController } from '@ionic/angular';
 
@@ -53,9 +53,9 @@ export class MenuPage implements OnInit {
           url: '/cidade',
         },
         {
-          title: 'Unidade',
+          title: 'Empresas',
           icon: 'clipboard',
-          url: '/unidades',
+          url: '/empresas',
         },
         {
           title: 'Marca',
@@ -160,8 +160,8 @@ export class MenuPage implements OnInit {
         this.usuario.login = "Administrador"
       }
 
-      if (this.as.token.empresa !== null && this.as.token.empresa !== undefined) {
-        this.es.getImagem(this.as.token.empresa.id).subscribe(
+      if (this.as.token.escritorio !== null && this.as.token.escritorio !== undefined) {
+        this.es.getImagem(this.as.token.escritorio.id).subscribe(
           data => {
             try {
               ///this.as.token.empresa.logo = (data as Empresa).logo;
