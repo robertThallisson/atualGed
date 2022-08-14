@@ -19,16 +19,16 @@
         <td>{{ item.login }}</td>
         <td>{{ item.email }}</td>
         <td>
-          <ion-button  shape="round" color="primary" icon-right tappable (click)="alteraSenha(usuario)">
+          <ion-button  shape="round" color="primary" icon-right tappable (click)="alteraSenha(item)">
             <ion-icon name="keypad"></ion-icon>
           </ion-button>
-          <ion-button  shape="round" color="primary" icon-right tappable (click)="permissaoUsuario(usuario)">
+          <ion-button  shape="round" color="primary" icon-right tappable (click)="permissaoUsuario(item)">
             <ion-icon name="key-outline"></ion-icon>
           </ion-button>
-          <ion-button  shape="round" color="primary" icon-right tappable (click)="editar(usuario)">
+          <ion-button  shape="round" color="primary" icon-right tappable (click)="editar(item)">
             <ion-icon name="create" color="warning"></ion-icon>
           </ion-button>
-          <ion-button  shape="round" color="primary" icon-right tappable (click)="excluir(usuario)" >
+          <ion-button  shape="round" color="primary" icon-right tappable (click)="excluir(item)" >
             <ion-icon name="trash" color="danger"></ion-icon>
           </ion-button>
         </td>

@@ -14,7 +14,7 @@
       <div class="logo"></div>
       <h3 no-margin>
         <ion-text color="light" class="fw700">
-          <ion-text color="light">Inserindo</ion-text>
+          <ion-text color="light">&nbsp;Inserindo</ion-text>
         </ion-text>
       </h3>
     </div>
@@ -26,18 +26,32 @@
    </input-mbi>      
   <input-mbi [(ngModel)]="empresa.pessoaJuridica.nomeFantasia" name="nomeFantasia" label="NomeFantasia">
    </input-mbi>      
-  <input-mbi [(ngModel)]="empresa.pessoaJuridica.cnpj" name="cnpj" label="Cnpj">
-   </input-mbi>      
+  <mask-mbi [(ngModel)]="empresa.pessoaJuridica.cnpj" name="cnpj" label="Cnpj" [mask]="{person: true}" >
+   </mask-mbi>      
   <input-mbi [(ngModel)]="empresa.pessoaJuridica.logradouro" name="logradouro" label="Logradouro">
    </input-mbi>      
+
+   <mask-mbi [(ngModel)]="empresa.pessoaJuridica.cep" name="cep" label="CEP"
+   [mask]="{mask:'00.000-000', len:10, userCaracters: true}" (ionBlur)="consultaCEP($event.target.value)">
+ </mask-mbi>
+
+
+ <ion-item no-padding class="animated fadeInUp">
+   <ion-label position="floating">
+     &nbsp;Cidade 
+   </ion-label>
+   <search-selectable [(ngModel)]="empresa.pessoaJuridica.cidade" name="cidade" [service]="cs">
+   </search-selectable>
+ </ion-item>
+
   <input-mbi [(ngModel)]="empresa.pessoaJuridica.bairro" name="bairro" label="Bairro">
    </input-mbi>      
   <input-mbi [(ngModel)]="empresa.pessoaJuridica.numero" name="numero" label="Numero">
    </input-mbi>      
   <input-mbi [(ngModel)]="empresa.pessoaJuridica.complemento" name="complemento" label="Complemento">
    </input-mbi>      
-  <input-mbi [(ngModel)]="empresa.pessoaJuridica.cidade" name="cidade" label="Cidade">
-   </input-mbi>      
+    
+  
     </form>
     <div margin-top>
       <ion-button size="medium" expand="full" shape="round" icon-right tappable (click)="salvar()">

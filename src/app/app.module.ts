@@ -1,3 +1,4 @@
+import { ConfiguracaoCertificadoPageModule } from './pages/empresa/configuracao-certificado/configuracao-certificado.module';
 import { MBIPipeModule } from './pipes/mbipipe.module';
 import { FormsModule } from '@angular/forms';
 import { DataModalPage } from './components/data-input/data-modal/data-modal.page';
@@ -30,6 +31,7 @@ import { CurrencyPipe } from '@angular/common';
 import { FileOpener } from '@awesome-cordova-plugins/file-opener/ngx';
 import { Base64 } from '@ionic-native/base64/ngx';
 import { File } from '@awesome-cordova-plugins/file/ngx';
+import { PhotoService } from './service/camera/photo.service';
 
 
 @NgModule({
@@ -62,7 +64,8 @@ import { File } from '@awesome-cordova-plugins/file/ngx';
     DataInputModule,
     CustomMenuModule,
     InputMbiModule,
-    CalendarModule
+    CalendarModule,
+    ConfiguracaoCertificadoPageModule
 ],
   providers: [
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
@@ -77,6 +80,7 @@ import { File } from '@awesome-cordova-plugins/file/ngx';
     File,
     MBIPipeModule,
     Base64,
+    PhotoService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,3 +1,4 @@
+import { SearchSelectableModule } from './../../../components/search-selectable/search-selectable.module';
 import { InputMbiModule } from './../../../components/input/input-mbi/input-mbi.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -15,7 +16,8 @@ import { EmpresaInserirPage } from './empresa-inserir.page';
     FormsModule,
     IonicModule,
     EmpresaInserirPageRoutingModule,
-    InputMbiModule
+    InputMbiModule,
+    SearchSelectableModule
   ],
   declarations: [EmpresaInserirPage]
 })

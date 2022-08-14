@@ -34,8 +34,7 @@
         <ion-label position="floating">
           &nbsp; Perfil Usuário
         </ion-label>
-        <search-selectable name="perfilUsuario" [service]="pa" [(ngModel)]="usuario.perfilUsuario"
-          >
+        <search-selectable name="perfilUsuario" [service]="pa"  [searchFull]="true" [(ngModel)]="usuario.perfilUsuario">
 
         </search-selectable>
       </ion-item>

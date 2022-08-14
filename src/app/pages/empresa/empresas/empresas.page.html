@@ -17,20 +17,24 @@
           <th> Numero </th>
           <th> Complemento </th>
           <th> Cidade </th>
-          <th style="width: 150px;"> A��es </th>
+          <th style="width: 150px;"> Ações </th>
         </tr>
       </thead>
 
       <tr *ngFor="let item of empresas">
-        <td>{{ item.razaoSocial }}</td>
-        <td>{{ item.nomeFantasia }}</td>
-        <td>{{ item.cnpj }}</td>
-        <td>{{ item.logradouro }}</td>
-        <td>{{ item.bairro }}</td>
-        <td>{{ item.numero }}</td>
-        <td>{{ item.complemento }}</td>
-        <td>{{ item.cidade }}</td>
+        <td>{{ item.pessoaJuridica.razaoSocial }}</td>
+        <td>{{ item.pessoaJuridica.nomeFantasia }}</td>
+        <td>{{ item.pessoaJuridica.cnpj }}</td>
+        <td>{{ item.pessoaJuridica.logradouro }}</td>
+        <td>{{ item.pessoaJuridica.bairro }}</td>
+        <td>{{ item.pessoaJuridica.numero }}</td>
+        <td>{{ item.pessoaJuridica.complemento }}</td>
+        <td>{{ item.pessoaJuridica.cidade?.nome }}</td>
         <td>
+          <ion-button size="small" shape="round" color="primary" icon-right tappable (click)="addCertificado(item)">
+            <ion-icon name="clipboard" color="warning"></ion-icon>
+
+          </ion-button>
           <ion-button size="small" shape="round" color="primary" icon-right tappable (click)="editar(item)">
             <ion-icon name="create" color="warning"></ion-icon>
 

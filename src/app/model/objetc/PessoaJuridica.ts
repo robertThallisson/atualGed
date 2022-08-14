@@ -1,6 +1,7 @@
 import { Cidade } from "./Cidade";
 
 export class PessoaJuridica {
+
   id: number;
   razaoSocial: string;
   nomeFantasia: string;

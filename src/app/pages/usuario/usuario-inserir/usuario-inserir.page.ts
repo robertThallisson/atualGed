@@ -1,3 +1,4 @@
+import { PhotoService } from './../../../service/camera/photo.service';
 import { CidadeService } from './../../../service/atualged/cidade.service';
 import { EscritorioService } from './../../../service/atualged/escritorio.service';
 import { UsuarioService } from './../../../service/atualged/usuario.service';
@@ -7,8 +8,6 @@ import { Usuario } from './../../../model/objetc/usuario';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Pessoa } from '../../../model/objetc/pessoa';
-import { Empresa } from '../../../model/objetc/empresa';
-import { IonicSelectableComponent } from 'ionic-selectable';
 import { ViacepService } from './../../../service/viacep/viacep.service';
 import { Estado } from '../../../model/enums/estado.enum';
 import { Camera, CameraOptions } from '@awesome-cordova-plugins/camera/ngx';
@@ -30,7 +29,9 @@ export class UsuarioInserirPage implements OnInit {
     public us: UsuarioService,
     private vcs: ViacepService,
     private cidadeServe: CidadeService,
-    private camera: Camera) { }
+    private camera: Camera,
+    public photoService: PhotoService
+    ) { }
 
   selecionarusuario(evente: any) {
 

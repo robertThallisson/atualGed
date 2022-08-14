@@ -1,0 +1,24 @@
+<ion-content padding class="login auth-page">
+  <div class="auth-content">
+    <form class="list-form auth-conten" (keydown)="keyDownFunction($event)">
+      <ion-item no-padding class="animated fadeInUp">
+        Certificado
+        <ion-input name="imgLogo" type="file" color="primary" accept="*.pfx" (change)="onFileSelected($event)"
+          id="fileInput">
+        </ion-input>
+
+      </ion-item>
+
+      <input-mbi [(ngModel)]="certificado.senha" name="password" label="Password" type="password">
+      </input-mbi>
+    </form>
+    <div margin-top>
+      <ion-button class="button-confirma-mim" size="medium" expand="full" shape="round" icon-right tappable
+        (click)="salvar()">
+        Confirmar
+        <ion-icon name="checkmark-circle" color="success"></ion-icon>
+      </ion-button>
+    </div>
+  </div>
+
+</ion-content>

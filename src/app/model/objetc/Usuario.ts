@@ -1,5 +1,5 @@
+import { PerfilUsuario } from './perfil-usuario';
 import { Pessoa } from './Pessoa';
-import { PerfilUsuario } from "./PerfilUsuario";
 
 export class Usuario {
   id: number;
